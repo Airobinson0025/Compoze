@@ -23,8 +23,8 @@ const Header = () => {
             href: '/'
         },
         {
-            label: 'Design',
-            href: '/design'
+            label: 'Interface',
+            href: '/interface'
         },
         {
             label: 'Guide',
@@ -50,7 +50,7 @@ const Header = () => {
         <nav>
             <ul className='flex itmes-center gap-7 font-semibold text-xl'>
                 {links.map((link, index) => (
-                    <li key={index} className='hover:scale-110 transiton duration-500'>
+                    <li key={index} className='hover:scale-[1.07] transiton duration-300'>
                         <Link href={link.href}>
                             <span className={pathname === link.href ? 'text-primary transition duration-500' : 'text-gray-400 transition duration-500'}>{link.label}</span>
                         </Link>

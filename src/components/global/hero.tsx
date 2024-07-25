@@ -1,7 +1,6 @@
 'use client'
 import Link from 'next/link'
 import React, { useRef, useEffect } from 'react'
-import { Button } from '../ui/button'
 import { Player } from '@lordicon/react'
 
 const ICON = require('../../assests/flat-arrow.json')
@@ -37,7 +36,6 @@ const Hero = () => {
                     icon={ICON}
                     size={30}
                     colorize='true'
-
                 />
             </div>
         </div>
