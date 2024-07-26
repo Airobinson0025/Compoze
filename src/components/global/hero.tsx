@@ -16,32 +16,21 @@ const Hero = () => {
         playerRef.current?.playFromBeginning()
     }
 
-    const colors = {
-        blue: 'text-[#0A21C0]',
-        darkBlue: 'text-[#050A44]',
-        darkGray: 'text-[#2C2E3A]',
-        lightGray: 'text-[#B3B4BD]',
-    }
+    
 
     const word = 'Compozed'
 
-    const colorizeFirstFourLetters = (word: string) => {
-        const firstFourLetters = word.slice(0, 4)
-        const remainingLetters = word.slice(4)
+    const firstFourLetters = word.slice(0, 4)
+
+    const italicizedFirstFourLetters = (word: string) => {
         return (
-            <span className='italic'>
-                <span className={colors.blue}>{firstFourLetters[0]}</span>
-                <span className={colors.darkBlue}>{firstFourLetters[1]}</span>
-                <span className={colors.darkGray}>{firstFourLetters[2]}</span>
-                <span className={colors.lightGray}>{firstFourLetters[3]}</span>
-            </span>
-        )
+            <span className='italic font-extrabold'>{firstFourLetters}</span>)
     }
 
   return (
     <section className='flex flex-col justify-center items-center text-center gap-5 mt-20 h-[550px]'>
         <div>
-            <h1 className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl'>{colorizeFirstFourLetters(word)}ozed.</h1>
+            <h1 className='text-5xl md:text-6xl lg:text-7xl xl:text-8xl font-light'>{italicizedFirstFourLetters(word)}ozed.</h1>
             <h3 className='mt-5 border-none font-normal text-muted-foreground'>Intellignently Organize and Elevate Your Website Design Systems</h3>
         </div>
 

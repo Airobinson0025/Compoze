@@ -52,7 +52,7 @@ const Header = () => {
                 {links.map((link, index) => (
                     <li key={index} className='hover:scale-[1.07] transiton duration-300 ease-in-out'>
                         <Link href={link.href}>
-                            <span className={pathname === link.href ? 'text-primary transition duration-500' : 'text-gray-400 hover:text-[#0A21C0] transition duration-500'}>{link.label}</span>
+                            <span className={pathname === link.href ? 'text-primary transition duration-500' : 'text-gray-400 transition duration-500'}>{link.label}</span>
                         </Link>
                     </li>
                 ))}
