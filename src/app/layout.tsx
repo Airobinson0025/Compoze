@@ -6,8 +6,8 @@ import Header from "@/components/global/header";
 const font = Urbanist({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
-  title: "Compoze",
-  description: "Intellignently Organize and Elevate Your Design Systems",
+  title: "Compozed",
+  description: "Intellignently Organize and Elevate Your Website Design Systems",
 };
 
 export default function RootLayout({

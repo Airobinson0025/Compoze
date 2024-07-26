@@ -23,8 +23,8 @@ const Header = () => {
             href: '/'
         },
         {
-            label: 'Interface',
-            href: '/interface'
+            label: 'Systems',
+            href: '/systems'
         },
         {
             label: 'Guide',
@@ -42,17 +42,17 @@ const Header = () => {
 
 
   return (
-    <section className='fixed top-0 left-0 right-0 max-w-7xl mx-auto p-3 flex items-center justify-between'>
+    <section className='fixed top-0 left-0 right-0 max-w-7xl mx-auto pt-3 px-4 xl:px-0 flex items-center justify-between z-[1000]'>
         <div>
             <h3>Logo</h3>
         </div>
 
-        <nav>
-            <ul className='flex itmes-center gap-7 font-semibold text-xl'>
+        <nav className='hidden md:inline'>
+            <ul className='flex items-center gap-7 font-medium text-lg lg:text-xl'>
                 {links.map((link, index) => (
-                    <li key={index} className='hover:scale-[1.07] transiton duration-300'>
+                    <li key={index} className='hover:scale-[1.07] transiton duration-300 ease-in-out'>
                         <Link href={link.href}>
-                            <span className={pathname === link.href ? 'text-primary transition duration-500' : 'text-gray-400 transition duration-500'}>{link.label}</span>
+                            <span className={pathname === link.href ? 'text-primary transition duration-500' : 'text-gray-400 hover:text-[#0A21C0] transition duration-500'}>{link.label}</span>
                         </Link>
                     </li>
                 ))}

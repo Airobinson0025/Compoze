@@ -2,10 +2,10 @@ import React from 'react'
 
 type Props = {}
 
-const DesignPage = () => {
+const Systems = (props: Props) => {
   return (
     <div></div>
   )
 }
 
-export default DesignPage
+export default Systems
