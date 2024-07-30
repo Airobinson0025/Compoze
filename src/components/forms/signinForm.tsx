@@ -37,7 +37,7 @@ const SigninForm = () => {
 
   return (
     <Form {...form}>
-        <h2 className='mb-8 border-none'>Sign In To Your Compoze Account.</h2>
+        <h2 className='mb-6 border-none'>Sign In To Your Compoze Account.</h2>
         <form className='flex flex-col gap-4 w-full text-md'>
                 <FormField
                     control={form.control}

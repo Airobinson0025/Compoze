@@ -64,8 +64,8 @@ const RegisterForm = () => {
 
   return (
     <Form {...form}>
-        <h2 className='mb-8 border-none'>Enter Your Info Below To Start Creating.</h2>
-        <form className='flex flex-col gap-5 w-full text-md'>
+        <h2 className='mb-6 border-none text-center'>Enter Your Info Below To <br className='md:hidden'/> Start Creating.</h2>
+        <form className='flex flex-col gap-5 w-full text-md border p-8 shadow-2xl rounded-md'>
             <div className='flex items-center gap-3'>
                 <FormField
                     control={form.control}
@@ -119,9 +119,10 @@ const RegisterForm = () => {
                         <FormMessage />
                     </FormItem>
                 )}></FormField>
+
+                <Button size='lg' type='submit' className='text-md w-full' onClick={form.handleSubmit(handleSumit)}>Register</Button>
                 
         </form>
-        <Button size='lg' type='submit' className='mt-6 text-lg w-full' onClick={form.handleSubmit(handleSumit)}>Register</Button>
     </Form>
   )
 }

@@ -5,7 +5,7 @@ const Register = () => {
 
 
   return (
-    <section className='h-screen flex items-center justify-center pt-20'>
+    <section className='h-screen flex items-center justify-center pt-14'>
         <div className='max-w-md'>
             <RegisterForm />
         </div>
