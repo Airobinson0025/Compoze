@@ -35,9 +35,8 @@ const Hero = () => {
         </div>
 
         <div onMouseEnter={handlePlayAnimation} className='flex items-center gap-2 h-11 border rounded-md px-8 text-md md:text-lg text-background shadow-lg bg-primary hover:bg-background hover:text-primary hover:border-foreground transition duration-500'>
-            <Link href='/register'>
+            <Link href='/register' className='flex items-center gap-2'>
                 <button>Get Started</button>
-            </Link>
             <div>
                 <Player
                     ref={playerRef}
@@ -46,6 +45,7 @@ const Hero = () => {
                     colorize='true'
                 />
             </div>
+            </Link>
         </div>
     </section>
   )
