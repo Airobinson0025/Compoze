@@ -15,15 +15,39 @@ import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 
 
+// shema for form validation
 const registerSchema = z.object({
-    firstName: z.string().min(2, { message: 'Must be one character long'}).max(50),
-    lastName: z.string().min(2, { message: 'Must be one character long'}).max(50),
+    firstName: z.string().min(1, { message: 'Must be one character long'}).max(50),
+    lastName: z.string().min(1, { message: 'Must be one character long'}).max(50),
     email: z.string().email(),
     password: z.string().min(6, { message: 'Password must be at least 6 characters long' }).regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'Password must contain at least one special character' }),
 })
 
+// api request to create user
 const handleSumit = async (values: z.infer<typeof registerSchema>) => {
-    console.log(values)
+    try {
+        const response = await fetch('/api/register', {
+            method: 'POST',
+            headers: {
+                'Content-Type': 'application/json'
+            },
+            body: JSON.stringify({
+                firstName: values.firstName,
+                lastName: values.lastName,
+                email: values.email,
+                password: values.password
+            })
+        })
+
+        if (response.ok) {
+            const data = await response.json()
+            console.log('User created successfully', data)
+        }
+
+    } catch (error) {
+        console.error(error)
+        throw new Error('An error occurred while creating user from frontend')
+    }
 }
 
 const RegisterForm = () => {
@@ -41,7 +65,7 @@ const RegisterForm = () => {
   return (
     <Form {...form}>
         <h2 className='mb-2 border-none'>Enter your info below to get started today.</h2>
-        <form className='flex flex-col gap-4 w-full text-lg p-4'>
+        <form className='flex flex-col gap-4 w-full text-md'>
             <div className='flex items-center gap-3 w-full'>
                 <FormField
                     control={form.control}
@@ -50,7 +74,7 @@ const RegisterForm = () => {
                         <FormItem>
                             <FormLabel className='text-md'>First Name</FormLabel>
                             <FormControl>
-                                <Input placeholder='First' className='text-lg' {...field} />
+                                <Input placeholder='First' className='text-md' {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -63,7 +87,7 @@ const RegisterForm = () => {
                         <FormItem>
                             <FormLabel className='text-md'>Last Name</FormLabel>
                             <FormControl>
-                                <Input placeholder='Last' className='text-lg' {...field} />
+                                <Input placeholder='Last' className='text-md' {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -77,7 +101,7 @@ const RegisterForm = () => {
                     <FormItem>
                         <FormLabel className='text-md'>Email</FormLabel>
                         <FormControl>
-                            <Input placeholder='your@email.com' className='text-md' {...field} />
+                            <Input placeholder='Example@gmail.com' className='text-md' {...field} />
                         </FormControl>
                         <FormMessage />
                     </FormItem>
