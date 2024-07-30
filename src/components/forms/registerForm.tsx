@@ -20,7 +20,7 @@ const registerSchema = z.object({
     firstName: z.string().min(1, { message: 'Must be one character long'}).max(50),
     lastName: z.string().min(1, { message: 'Must be one character long'}).max(50),
     email: z.string().email(),
-    password: z.string().min(6, { message: 'Password must be at least 6 characters long' }).regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'Password must contain at least one special character' }),
+    password: z.string().min(8, { message: 'Password must be at least 8 characters long' }).regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'Password must contain at least one special character' }),
 })
 
 // api request to create user
@@ -64,17 +64,17 @@ const RegisterForm = () => {
 
   return (
     <Form {...form}>
-        <h2 className='mb-2 border-none'>Enter your info below to get started today.</h2>
-        <form className='flex flex-col gap-4 w-full text-md'>
-            <div className='flex items-center gap-3 w-full'>
+        <h2 className='mb-8 border-none'>Enter Your Info Below To Start Creating.</h2>
+        <form className='flex flex-col gap-5 w-full text-md'>
+            <div className='flex items-center gap-3'>
                 <FormField
                     control={form.control}
                     name='firstName'
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem className='w-full'>
                             <FormLabel className='text-md'>First Name</FormLabel>
                             <FormControl>
-                                <Input placeholder='First' className='text-md' {...field} />
+                                <Input placeholder='First' className='text-md w-full' {...field} />
                             </FormControl>
                             <FormMessage />
                         </FormItem>
@@ -84,7 +84,7 @@ const RegisterForm = () => {
                     control={form.control}
                     name='lastName'
                     render={({field}) => (
-                        <FormItem>
+                        <FormItem className='w-full'>
                             <FormLabel className='text-md'>Last Name</FormLabel>
                             <FormControl>
                                 <Input placeholder='Last' className='text-md' {...field} />

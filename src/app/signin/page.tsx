@@ -1,16 +1,14 @@
-import RegisterForm from '@/components/forms/registerForm'
+import SigninForm from '@/components/forms/signinForm'
 import React from 'react'
 
-const Register = () => {
-
-
+const SignIn = () => {
   return (
     <section className='h-screen flex items-center justify-center pt-20'>
         <div className='max-w-md'>
-            <RegisterForm />
+            <SigninForm />
         </div>
     </section>
   )
 }
 
-export default Register
+export default SignIn

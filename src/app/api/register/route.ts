@@ -6,7 +6,7 @@ const registerSchema = z.object({
     firstName: z.string().min(2, { message: 'Must be one character long'}).max(50),
     lastName: z.string().min(2, { message: 'Must be one character long'}).max(50),
     email: z.string().email(),
-    password: z.string().min(6, { message: 'Password must be at least 6 characters long' }).regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'Password must contain at least one special character' }),
+    password: z.string().min(8, { message: 'Password must be at least 8 characters long' }).regex(/[!@#$%^&*(),.?":{}|<>]/, { message: 'Password must contain at least one special character' }),
 })
 
 export async function POST(req: NextRequest) {
@@ -24,7 +24,7 @@ export async function POST(req: NextRequest) {
         //create user
         const newUser = await createUser(firstName, lastName, email, password);
 
-        //hide password
+        //hide password from client side
         const { password: newUserPassword, ...rest } = newUser[0];
 
         return NextResponse.json({ user: rest, message: 'User created successfully'}, { status: 201 });
