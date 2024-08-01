@@ -1,7 +1,5 @@
-import { profile } from "console";
 import { text, varchar, pgTable, timestamp } from "drizzle-orm/pg-core";
 import { drizzle } from "drizzle-orm/postgres-js";
-import { on } from "events";
 import postgres from "postgres";
 
 const connectionString = process.env.SUPABASE_DATABASE_URL || '';

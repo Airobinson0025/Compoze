@@ -39,7 +39,7 @@ const handleSumit = async (values: z.infer<typeof registerSchema>) => {
             })
         })
 
-        if (response.ok) {
+        if (response?.ok) {
             const data = await response.json()
             console.log('User created successfully', data)
         }
@@ -64,8 +64,8 @@ const RegisterForm = () => {
 
   return (
     <Form {...form}>
-        <h2 className='mb-6 border-none text-center'>Enter Your Info Below To <br className='md:hidden'/> Start Creating.</h2>
-        <form className='flex flex-col gap-5 w-full text-md border p-8 shadow-2xl rounded-md'>
+        <h2 className='mb-14 border-none text-center'>Enter Your Info Below To <br className='md:hidden'/> Start Creating.</h2>
+        <form className='flex flex-col gap-5 w-full text-md'>
             <div className='flex items-center gap-3'>
                 <FormField
                     control={form.control}

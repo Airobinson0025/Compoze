@@ -1,9 +1,18 @@
+import { db } from "@/db/schema"
 import { verifyPassword } from "@/services/authServices"
 import { getUserByEmail } from "@/services/userServices"
+import { DrizzleAdapter } from "@auth/drizzle-adapter"
 import NextAuth from "next-auth"
 import Credentials from "next-auth/providers/credentials"
  
 export const { handlers, signIn, signOut, auth } = NextAuth({
+  adapter: DrizzleAdapter(db),
+  session: {
+    strategy: 'jwt',
+  },
+  pages: {
+    signIn: '/signin'
+  },
   providers: [
     Credentials({
       credentials: {
@@ -12,7 +21,7 @@ export const { handlers, signIn, signOut, auth } = NextAuth({
       },
       authorize: async (credentials) => {
         try {
-          if (!credentials.email || credentials.password) {
+          if (!credentials.email || !credentials.password) {
             return null
           }
 

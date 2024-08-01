@@ -2,6 +2,7 @@ import type { Metadata } from "next";
 import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/global/header";
+import AuthProvider from "@/components/providers/auth-provider";
 
 const font = Urbanist({ subsets: ["latin"] });
 
@@ -18,8 +19,10 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body className={font.className}>
-        <Header />
-        {children}
+        <AuthProvider >
+          <Header />
+          {children}
+        </AuthProvider>
       </body>
     </html>
   );

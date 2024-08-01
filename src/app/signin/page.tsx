@@ -3,7 +3,7 @@ import React from 'react'
 
 const SignIn = () => {
   return (
-    <section className='h-screen flex items-center justify-center pt-20'>
+    <section className='h-screen flex items-center justify-center'>
         <div className='max-w-md'>
             <SigninForm />
         </div>

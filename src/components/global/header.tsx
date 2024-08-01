@@ -17,14 +17,15 @@ const Header = () => {
 
     const pathname = usePathname()
 
+
     const links: Link[] = [
         {
             label: 'Home',
             href: '/'
         },
         {
-            label: 'Systems',
-            href: '/systems'
+            label: 'Dashboard',
+            href: '/dashboard'
         },
         {
             label: 'Guide',
@@ -48,11 +49,11 @@ const Header = () => {
         </div>
 
         <nav className='hidden md:inline'>
-            <ul className='flex items-center gap-7 font-medium text-lg lg:text-xl'>
+            <ul className='flex items-center gap-7 font-medium text-lg'>
                 {links.map((link, index) => (
                     <li key={index} className='hover:scale-[1.07] transiton duration-300 ease-in-out'>
                         <Link href={link.href}>
-                            <span className={pathname === link.href ? 'text-primary transition duration-500' : 'text-gray-400 transition duration-500'}>{link.label}</span>
+                            <span className={pathname === link.href ? 'text-blue-500 transition duration-500' : 'text-gray-400 transition duration-500'}>{link.label}</span>
                         </Link>
                     </li>
                 ))}
