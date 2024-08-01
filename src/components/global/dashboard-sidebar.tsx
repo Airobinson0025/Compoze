@@ -9,6 +9,9 @@ import { IoHomeOutline } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
 import { IoLogOutOutline } from "react-icons/io5";
 import { IoCubeOutline } from "react-icons/io5";
+import { IoBrushOutline } from "react-icons/io5";
+import { IoCodeSlash } from "react-icons/io5";
+import { TbTypography } from "react-icons/tb";
 import { useSession } from 'next-auth/react';
 
 
@@ -33,6 +36,27 @@ const DashboardSidebar = () => {
             href: "/dashboard/projects",
             icon: (
               <IoCubeOutline />
+            ),
+          },
+          {
+            label: "Colors",
+            href: "/dashboard/colors",
+            icon: (
+              <IoBrushOutline />
+            ),
+          },
+          {
+            label: "Components",
+            href: "/dashboard/projects",
+            icon: (
+              <IoCodeSlash />
+            ),
+          },
+          {
+            label: "Typography",
+            href: "/dashboard/typography",
+            icon: (
+              <TbTypography />
             ),
           },
         {
@@ -64,11 +88,11 @@ const DashboardSidebar = () => {
     return (
       <div
         className={cn(
-          "rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
-          "h-[60vh]" // for your use case, use `h-screen` instead of `h-[60vh]`
+          "hidden rounded-md md:flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
+          " sm:h-[650px]"
         )}
       >
-        <Sidebar open={open} setOpen={setOpen} animate={false}>
+        <Sidebar open={open} setOpen={setOpen} animate={true}>
           <SidebarBody className="justify-between gap-10">
             <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
               <>

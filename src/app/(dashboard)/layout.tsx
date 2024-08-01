@@ -12,11 +12,11 @@ const DashboardLayout = ({children}: DashboardLayoutProps) => {
 
     
   return (
-    <div className='flex mt-24'>
+    <div className='flex mt-20'>
         <div>
             <DashboardSidebar />
         </div>
-        <div>
+        <div className='h-screen over-y-scroll pt-10 px-12'>
             {children}
         </div>
     </div>

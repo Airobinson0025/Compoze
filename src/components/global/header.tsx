@@ -43,7 +43,7 @@ const Header = () => {
 
 
   return (
-    <section className='fixed top-0 left-0 right-0 max-w-7xl mx-auto pt-3 px-4 xl:px-0 flex items-center justify-between z-[1000]'>
+    <section className='fixed top-0 left-0 right-0 max-w-7xl mx-auto pt-3 px-4 xl:px-0 flex items-center justify-between z-[500]'>
         <div>
             <h3>Logo</h3>
         </div>

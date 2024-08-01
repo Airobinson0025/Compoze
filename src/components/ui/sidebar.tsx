@@ -4,7 +4,6 @@ import Link, { LinkProps } from "next/link";
 import React, { useState, createContext, useContext, useEffect, useRef } from "react";
 import { AnimatePresence, motion } from "framer-motion";
 import { IconMenu2, IconX } from "@tabler/icons-react";
-import { Player } from "@lordicon/react";
 
 
 interface Links {
@@ -91,11 +90,11 @@ export const DesktopSidebar = ({
     <>
       <motion.div
         className={cn(
-          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-secondary dark:bg-neutral-800 w-[300px] flex-shrink-0",
+          "h-full px-4 py-4 hidden  md:flex md:flex-col bg-secondary dark:bg-neutral-800 w-[170px] flex-shrink-0",
           className
         )}
         animate={{
-          width: animate ? (open ? "240px" : "60px") : "240px",
+          width: animate ? (open ? "170px" : "60px") : "170px",
         }}
         onMouseEnter={() => setOpen(true)}
         onMouseLeave={() => setOpen(false)}
@@ -167,17 +166,6 @@ export const SidebarLink = ({
   props?: LinkProps;
 }) => {
   const { open, animate } = useSidebar();
-
-  const playerRef = useRef<Player>(null)
-    
-    useEffect(() => {
-        playerRef.current?.pause()
-    }, [])
-
-    const handlePlayAnimation = () => {
-        playerRef.current?.playFromBeginning()
-    }
-
   return (
     <Link
       href={link.href}
@@ -194,7 +182,7 @@ export const SidebarLink = ({
           display: animate ? (open ? "inline-block" : "none") : "inline-block",
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
-        className="text-neutral-700 dark:text-neutral-200 text-lg hover:text-blue-500 group-hover/sidebar:translate-x-1 transition duration-300 whitespace-pre inline-block !p-0 !m-0"
+        className="text-neutral-700 dark:text-neutral-200 text-sm hover:text-blue-500 group-hover/sidebar:translate-x-1 transition duration-300 whitespace-pre inline-block !p-0 !m-0"
       >
         {link.label}
       </motion.span>
