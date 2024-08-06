@@ -41,7 +41,7 @@ const Hero = () => {
                 <Player
                     ref={playerRef}
                     icon={ICON}
-                    size={35}
+                    size={30}
                     colorize='true'
                 />
             </div>

@@ -1,28 +1,21 @@
 'use client'
-import React from 'react'
-import { useSession } from 'next-auth/react'
 import { motion } from 'framer-motion'
-
-const Dashboard = () => {
-  
-    const { data: session, status } = useSession()
-    
-    const usersName = session?.user?.name
+import React from 'react'
 
 
-
-  
-    return (
+const Components = () => {
+  return (
       <section>
           <motion.div
           initial={{ opacity: 0 }}
           animate={{ opacity: 1 }}
           transition={{ duration: .5 }} 
           className='flex flex-col gap-2'>
-            <h1>Welcome, {usersName}</h1>
+            <h1>Components +</h1>
+            <h3 className='text-muted-foreground'></h3>
           </motion.div>
       </section>
-    )
+  )
 }
 
-export default Dashboard
+export default Components

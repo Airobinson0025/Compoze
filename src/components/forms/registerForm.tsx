@@ -64,7 +64,7 @@ const RegisterForm = () => {
 
   return (
     <Form {...form}>
-        <h2 className='mb-14 border-none text-center'>Enter Your Info Below To <br className='md:hidden'/> Start Creating.</h2>
+        <h2 className='mb-10 border-none text-center'>Enter Your Info Below To <br className='md:hidden'/> Start Creating.</h2>
         <form className='flex flex-col gap-5 w-full text-md'>
             <div className='flex items-center gap-3'>
                 <FormField

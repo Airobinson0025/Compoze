@@ -7,12 +7,13 @@ import { motion } from 'framer-motion';
 import { RxAvatar } from "react-icons/rx";
 import { IoHomeOutline } from "react-icons/io5";
 import { IoSettingsOutline } from "react-icons/io5";
-import { IoLogOutOutline } from "react-icons/io5";
 import { IoCubeOutline } from "react-icons/io5";
 import { IoBrushOutline } from "react-icons/io5";
 import { IoCodeSlash } from "react-icons/io5";
 import { TbTypography } from "react-icons/tb";
 import { useSession } from 'next-auth/react';
+import { useRouter } from 'next/navigation';
+import { signOut } from 'next-auth/react';
 
 
 
@@ -22,7 +23,7 @@ const DashboardSidebar = () => {
     const { data: session, status } = useSession()
 
     const usersName = session?.user?.name
-    
+
     const links = [
         {
           label: "Home",
@@ -46,8 +47,8 @@ const DashboardSidebar = () => {
             ),
           },
           {
-            label: "Components",
-            href: "/dashboard/projects",
+            label: "Components +",
+            href: "/dashboard/components",
             icon: (
               <IoCodeSlash />
             ),
@@ -61,7 +62,7 @@ const DashboardSidebar = () => {
           },
         {
           label: "Profile",
-          href: "/profile",
+          href: "/dashboard/profile",
           icon: (
             <RxAvatar />
           ),
@@ -73,13 +74,7 @@ const DashboardSidebar = () => {
             <IoSettingsOutline />
           ),
         },
-        {
-          label: "Logout",
-          href: "#",
-          icon: (
-            <IoLogOutOutline />
-          ),
-        },
+        
       ];
 
     const [open, setOpen] = useState(false);
@@ -89,7 +84,7 @@ const DashboardSidebar = () => {
       <div
         className={cn(
           "hidden rounded-md md:flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
-          " sm:h-[650px]"
+          " h-[calc(100vh-100px)]"
         )}
       >
         <Sidebar open={open} setOpen={setOpen} animate={true}>

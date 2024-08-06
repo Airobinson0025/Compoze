@@ -28,8 +28,8 @@ const Header = () => {
             href: '/dashboard'
         },
         {
-            label: 'Guide',
-            href: '/guide'
+            label: 'Docs',
+            href: '/documentation'
         },
         {
             label: 'Pricing',
@@ -43,7 +43,7 @@ const Header = () => {
 
 
   return (
-    <section className='fixed top-0 left-0 right-0 max-w-7xl mx-auto pt-3 px-4 xl:px-0 flex items-center justify-between z-[500]'>
+    <section className='top-0 left-0 right-0 max-w-7xl mx-auto pt-3 px-4 xl:px-0 flex items-center justify-between z-[1000] fixed'>
         <div>
             <h3>Logo</h3>
         </div>
