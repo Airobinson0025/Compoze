@@ -1,8 +1,14 @@
 'use client'
 import Link from 'next/link'
-import React from 'react'
+import React, { useRef, useEffect } from 'react'
 import { Button } from '../ui/button'
 import { usePathname } from 'next/navigation'
+import { Player } from '@lordicon/react'
+import { Tooltip, TooltipContent, TooltipProvider, TooltipTrigger } from '../ui/tooltip'
+
+
+
+const ICON = require('../../assests/navigation-icon.json')
 
 type Link = {
     label: string
@@ -15,7 +21,17 @@ type HeaderProps = {
 
 const Header = () => {
 
+    const playerRef = useRef<Player>(null)
+
     const pathname = usePathname()
+
+    useEffect(() => {
+        playerRef.current?.playFromBeginning()
+    }, [])
+
+    const handlePlayAnimation = () => {
+        playerRef.current?.playFromBeginning()
+    }
 
 
     const links: Link[] = [
@@ -48,7 +64,7 @@ const Header = () => {
             <h3>Logo</h3>
         </div>
 
-        <nav className='hidden md:inline'>
+        {/* <nav className='hidden md:inline'>
             <ul className='flex items-center gap-7 font-medium text-lg'>
                 {links.map((link, index) => (
                     <li key={index} className='hover:scale-[1.07] transiton duration-300 ease-in-out'>
@@ -58,12 +74,28 @@ const Header = () => {
                     </li>
                 ))}
             </ul>
-        </nav>
+        </nav> */}
 
         <div>
-            <Link href='/signin'>
-                <Button variant='outline' className='text-lg shadow-lg hover:bg-primary hover:text-primary-foreground'>Login</Button>
-            </Link>
+            <div onMouseEnter={handlePlayAnimation}>
+                <TooltipProvider>
+                    <Tooltip>
+                        <TooltipTrigger asChild>
+                            <Button variant='outline' size='icon' className='border-2 border-foreground shadow-xl hover:shadow-blue-500/45 hover:border-blue-600 hover:text-blue-600 transition duration-500'>
+                                <Player
+                                    ref={playerRef}
+                                    icon={ICON}
+                                    size={30}
+                                    colorize='true'
+                                />
+                            </Button>
+                        </TooltipTrigger>
+                        <TooltipContent>
+                        <p className='text-foreground'>Navigate</p>
+                        </TooltipContent>
+                    </Tooltip>
+                </TooltipProvider>
+            </div>
         </div>
     </section>
   )

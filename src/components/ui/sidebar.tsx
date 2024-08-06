@@ -182,7 +182,7 @@ export const SidebarLink = ({
       )}
       {...props}
     >
-      <div className={cn(currentPath ? "text-blue-500" : "text-neutral-700 dark:text-neutral-200",
+      <div className={cn(currentPath ? "text-blue-600" : "text-neutral-700 dark:text-neutral-200",
         "transition duration-300"
       )}>
         {link.icon}
@@ -194,8 +194,8 @@ export const SidebarLink = ({
           opacity: animate ? (open ? 1 : 0) : 1,
         }}
         className={cn(
-          currentPath ? "text-blue-500" : "text-neutral-700 dark:text-neutral-200",
-          "text-sm group-hover/sidebar:translate-x-1 transition duration-300 whitespace-pre inline-block !p-0 !m-0"
+          currentPath ? "text-blue-600" : "text-neutral-700 dark:text-neutral-200",
+          "text-sm group-hover/sidebar:translate-x-1 group-hover/sidebar:scale-110 transition duration-300 whitespace-pre inline-block !p-0 !m-0"
         )}
       >
         {link.label}
