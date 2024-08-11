@@ -23,8 +23,6 @@ const Header = () => {
 
     const playerRef = useRef<Player>(null)
 
-    const pathname = usePathname()
-
     useEffect(() => {
         playerRef.current?.playFromBeginning()
     }, [])
@@ -59,22 +57,13 @@ const Header = () => {
 
 
   return (
-    <section className='top-0 left-0 right-0 max-w-7xl mx-auto pt-3 px-4 xl:px-0 flex items-center justify-between z-[1000] fixed'>
+    <section className='top-0 left-0 right-0 max-w-7xl mx-auto my-6 px-4 xl:px-0 flex items-center justify-between z-[1000] fixed'>
         <div>
-            <h3>Logo</h3>
+            <Link href='/'>
+                <h3>Logo</h3>
+            </Link>
         </div>
 
-        {/* <nav className='hidden md:inline'>
-            <ul className='flex items-center gap-7 font-medium text-lg'>
-                {links.map((link, index) => (
-                    <li key={index} className='hover:scale-[1.07] transiton duration-300 ease-in-out'>
-                        <Link href={link.href}>
-                            <span className={pathname === link.href ? 'text-blue-500 transition duration-500' : 'text-gray-400 transition duration-500'}>{link.label}</span>
-                        </Link>
-                    </li>
-                ))}
-            </ul>
-        </nav> */}
 
         <div>
             <div onMouseEnter={handlePlayAnimation}>

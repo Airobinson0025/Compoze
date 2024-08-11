@@ -25,7 +25,7 @@ const DashboardLayout = ({children}: DashboardLayoutProps) => {
     useEffect(() => {
         const timeout = setTimeout(() => {
             setIsLoading(false)
-        }, 4000)
+        }, 2500)
 
         return () => clearTimeout(timeout)
     }, [status])

@@ -24,7 +24,7 @@ const Hero = () => {
 
     const italicizedFirstFourLetters = (word: string) => {
         return (
-            <span className='italic font-extrabold text-blue-500'>{firstFourLetters}</span>)
+            <span className='text-blue-600'>{firstFourLetters}</span>)
     }
 
   return (
