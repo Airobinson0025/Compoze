@@ -17,7 +17,6 @@ const DashboardLayout = ({children}: DashboardLayoutProps) => {
     const router = useRouter()
     const playerRef = useRef<Player>(null)
 
-    const [ isSidebarExpanded, setIsSidebarExpanded ] = useState(false)
     const [ isLoading, setIsLoading ] = useState(true)
 
     const { data: session, status } = useSession()
@@ -66,21 +65,14 @@ const DashboardLayout = ({children}: DashboardLayoutProps) => {
         router.push('/signin')
     }
 
-    const handleSidebarHover = () => {
-        setIsSidebarExpanded(true)
-    }
-
-    const handleSidebarLeave = () => {
-        setIsSidebarExpanded(false)
-    }
 
     
   return (
     <div className='flex pt-20'>
-        <div className='fixed' onMouseEnter={handleSidebarHover} onMouseLeave={handleSidebarLeave}>
+        <div className='fixed'>
             <DashboardSidebar />
         </div>
-        <div className={`overflow-y-scroll pt-10 transition-padding duration-300 ${isSidebarExpanded ? 'pl-48' : 'pl-24'} pr-8`}>
+        <div className={`overflow-y-scroll pt-10 transition-padding duration-300 md:pl-48  pr-8`}>
             {children}
         </div>
     </div>

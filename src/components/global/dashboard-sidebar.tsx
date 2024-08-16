@@ -47,7 +47,7 @@ const DashboardSidebar = () => {
             ),
           },
           {
-            label: "Components +",
+            label: "Components",
             href: "/dashboard/components",
             icon: (
               <IoCodeSlash />
@@ -83,11 +83,11 @@ const DashboardSidebar = () => {
     return (
       <div
         className={cn(
-          "hidden rounded-md md:flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
+          "rounded-md flex flex-col md:flex-row bg-gray-100 dark:bg-neutral-800 w-full flex-1 max-w-7xl mx-auto border border-neutral-200 dark:border-neutral-700 overflow-hidden",
           " h-[calc(100vh-100px)]"
         )}
       >
-        <Sidebar open={open} setOpen={setOpen} animate={true}>
+        <Sidebar open={open} setOpen={setOpen} animate={false}>
           <SidebarBody className="justify-between gap-10">
             <div className="flex flex-col flex-1 overflow-y-auto overflow-x-hidden">
               <div className="flex flex-col gap-2">
