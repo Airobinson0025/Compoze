@@ -72,7 +72,7 @@ const DashboardLayout = ({children}: DashboardLayoutProps) => {
         <div className='fixed'>
             <DashboardSidebar />
         </div>
-        <div className={`overflow-y-scroll pt-10 transition-padding duration-300 md:pl-48  pr-8`}>
+        <div className={`overflow-y-scroll pt-6 transition-padding duration-300 md:pl-52  pr-8`}>
             {children}
         </div>
     </div>
