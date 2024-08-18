@@ -3,6 +3,8 @@ import { Urbanist } from "next/font/google";
 import "./globals.css";
 import Header from "@/components/global/header";
 import AuthProvider from "@/components/providers/auth-provider";
+import { ThemeProvider } from "@/components/providers/theme-provider";
+
 
 const font = Urbanist({ subsets: ["latin"] });
 
@@ -20,8 +22,15 @@ export default function RootLayout({
     <html lang="en">
       <body className={font.className}>
         <AuthProvider >
+          <ThemeProvider
+            attribute="class"
+            defaultTheme="light"
+            enableSystem
+            disableTransitionOnChange
+            >
           <Header />
           {children}
+          </ThemeProvider>
         </AuthProvider>
       </body>
     </html>

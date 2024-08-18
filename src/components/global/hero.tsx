@@ -37,7 +37,7 @@ const Hero = () => {
             <h3 className='mt-5 border-none font-normal text-muted-foreground'>Intellignently Organize and Elevate Your Website Design Systems</h3>
         </div>
 
-        <div onMouseEnter={handlePlayAnimation} className='flex items-center gap-2 h-11 bg-blue-600 border rounded-md px-8 text-md md:text-lg text-background shadow-xl hover:scale-105 hover:bg-background hover:text-blue-600 hover:border-blue-600 transition duration-500'>
+        <div onMouseEnter={handlePlayAnimation} className='flex items-center gap-2 h-11 bg-blue-600 border rounded-md px-8 text-md md:text-lg text-background dark:text-foreground shadow-xl hover:scale-105 hover:bg-background hover:text-blue-600 hover:border-blue-600 transition duration-500'>
             <Link href={session ? '/dashboard' : '/register'} className='flex items-center gap-2'>
                 <button>Start Creating</button>
             <div>
